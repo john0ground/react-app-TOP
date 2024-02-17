@@ -1,11 +1,13 @@
-function Button({ text, color, fontSize }) {
+function Button({ text = 'Click Me!', color = 'blue', fontSize = 12, handleClick }) {
     const buttonStyle = {
         color: color,
         fontSize: fontSize + 'px'
     }
 
     return (
-        <button style={buttonStyle}>{text}</button>
+        <button style={buttonStyle} onClick={() => handleClick('https://navalwarfare.netlify.app/')}>
+            {text}
+        </button>
     );
 }
 
@@ -16,11 +18,13 @@ Button.defaultProps = {
 }
 
 export default function DataTransfer() {
+    const handleButtonClick = (url) => {
+        window.location.href = url;
+    }
+
     return (
         <div>
-            <Button text="Click Me!" color="blue" fontSize={12} />
-            <Button text="Don't Click Me!" color="red" />
-            <Button fontSize={20} />
+            <Button handleClick={handleButtonClick}/>
         </div>
     );
 }
