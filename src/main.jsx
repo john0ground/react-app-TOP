@@ -1,10 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import DataTransfer from './DataTransfer';
+import Profile from './DocsTest';
 import './index.css';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
     <React.StrictMode>
-        <DataTransfer />
+        <Profile />
     </React.StrictMode>,
 );
